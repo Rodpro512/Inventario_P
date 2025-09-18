@@ -23,7 +23,7 @@
     <main class="flex-grow-1 d-flex align-items-center justify-content-center py-4">
         <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
             <h2 class="text-center text-warning mb-4">Inicio de Sesión</h2>
-            <form method="post" action="login.php" class="needs-validation" novalidate>
+            <form method="post" asp-controller="Home" asp-action="Login" class="needs-validation" novalidate>
 
                 <div class="mb-3">
                     <label for="useremail" class="form-label fw-semibold">Ingrese su Usuario</label>
@@ -57,13 +57,13 @@
                 <div class="col-md-6">
                     <div class="d-flex justify-content-center justify-content-md-end gap-3">
                         <a href="https://www.youtube.com/watch?v=4KoU144az18" target="_blank">
-                            <img src="~/Imagenes/Facebook_logo_(square).png" alt="YouTube" width="50">
+                            <img src="~/Imagenes/Facebook_logo_(square).png" alt="Facebook" width="50">
                         </a>
                         <a href="https://www.instagram.com/_filosofarte?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="35">
+                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="50">
                         </a>
                         <a href="#" target="_blank">
-                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="40">
+                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="60">
                         </a>
                     </div>
                 </div>
