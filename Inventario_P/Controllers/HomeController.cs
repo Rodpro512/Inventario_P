@@ -15,6 +15,7 @@ namespace Inventario_P.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
