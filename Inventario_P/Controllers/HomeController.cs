@@ -17,11 +17,5 @@ namespace Inventario_P.Controllers
         {
             return View();
         }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-       
     }
 }
