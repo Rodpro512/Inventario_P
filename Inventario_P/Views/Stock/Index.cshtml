@@ -24,6 +24,7 @@
                     <ul class="navbar-nav ms-auto">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="~/Informativo/Index"><button type="button" class="btn btn-primary">Inicio</button></a>
+                            <a href="~/Creacion/Index"><button type="button" class="btn btn-primary">Creacion del productos</button></a>
 
                             <div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,7 +35,7 @@
                                     <li><a class="dropdown-item" href="~/Egreso/Index">Egreso de Productos</a></li>
                                 </ul>
                             </div>
-                            <a href="/Stock/Index"><button type="button" class="btn btn-primary">Stock y Tablas</button></a>
+                            <a href="~/Stock/Index"><button type="button" class="btn btn-primary">Stock y Tablas</button></a>
                             <a href="~/Home/Index"><button type="button" class="btn btn-primary">Cerrar Sesion</button></a>
                         </div>
                     </ul>
@@ -43,7 +44,42 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
 
+    <!--Visualizacion de las Tablas-->
+    <div class="card">
+        <h5 class="card-header text-white" style="background-color: #141322;">Featured</h5>
+        <div class="card-body" style="background-color: #a9a105;">
+            <h5 class="card-title text-white"><strong>Stock y Tablas</strong></h5>
+            <p class="card-text text-white">Seleccione la Tabla que desea ver</p>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>.....</option>
+                <option value="1">Productos</option>
+                <option value="2">Bitacora</option>
+                <option value="3">Movimientos</option>
+            </select>
+
+            <br>
+
+            <!-- Button trigger modal -->
+            <div class="d-grid gap-2 mt-3">
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Mostrar tabla
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <!-- Footer -->
     <footer class=" text-white py-4 mt-auto" style="background-color: #280336;">
@@ -58,13 +94,13 @@
                 <div class="col-md-6">
                     <div class="d-flex justify-content-center justify-content-md-end gap-3">
                         <a href="https://www.youtube.com/watch?v=4KoU144az18" target="_blank">
-                            <img src="~/Imagenes/Facebook_logo_(square).png" alt="YouTube" width="50">
+                            <img src="~/Imagenes/Facebook_logo_(square).png" alt="Facebook" width="50">
                         </a>
                         <a href="https://www.instagram.com/_filosofarte?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="35">
+                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="50">
                         </a>
                         <a href="#" target="_blank">
-                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="40">
+                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="60">
                         </a>
                     </div>
                 </div>

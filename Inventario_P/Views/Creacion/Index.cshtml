@@ -45,14 +45,13 @@
         </nav>
     </header>
 
-    <br>
-    <br>
-    <br>
-
+<br>
+<br>
+<br>
 
     <div class="card shadow-lg border-0">
-        <div class="card-header bg-warning text-white">
-            <h5 class="mb-0">Formulario de Producto</h5>
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Registro de Producto</h5>
         </div>
         <div class="card-body">
 
@@ -65,28 +64,37 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                 Datos del Producto
                             </button>
                         </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
 
-                                <!-- ID Producto -->
+                                <!-- Nombre del producto -->
                                 <div class="mb-3">
-                                    <label for="idProducto" class="form-label">ID Producto</label>
-                                    <input type="text" class="form-control" id="idProducto" placeholder="Ingrese el ID del producto" required>
+                                    <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+                                    <input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre del producto" required>
                                     <div class="invalid-feedback">
-                                        Por favor, ingrese el ID del producto.
+                                        Por favor, ingrese el nombre del producto.
                                     </div>
                                 </div>
 
-                                <!-- Fecha de salida -->
+                                <!-- Código del producto -->
                                 <div class="mb-3">
-                                    <label for="fechaSalida" class="form-label">Fecha de Entrada del Producto</label>
-                                    <input type="date" class="form-control" id="fechaSalida" required>
+                                    <label for="codigoProducto" class="form-label">Código del Producto</label>
+                                    <input type="text" class="form-control" id="codigoProducto" placeholder="Ingrese el código del producto" required>
                                     <div class="invalid-feedback">
-                                        Por favor, seleccione la fecha de Entrada.
+                                        Por favor, ingrese el código del producto.
+                                    </div>
+                                </div>
+
+                                <!-- Fecha -->
+                                <div class="mb-3">
+                                    <label for="fechaProducto" class="form-label">Fecha de Salida del Producto</label>
+                                    <input type="date" class="form-control" id="fechaProducto" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, seleccione la fecha de salida.
                                     </div>
                                 </div>
 
@@ -99,6 +107,15 @@
                                     </div>
                                 </div>
 
+                                <!-- Archivo -->
+                                <div class="mb-3">
+                                    <label for="archivoProducto" class="form-label">Subir archivo del producto</label>
+                                    <input type="file" class="form-control" id="archivoProducto" aria-label="Archivo del producto" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, suba un archivo válido.
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -107,58 +124,82 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                Observaciones
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Especificaciones del Producto
                             </button>
                         </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
-                                <!-- Descripcion producto -->
+
+                                <!-- Marca -->
                                 <div class="mb-3">
-                                    <label for="descripcionProducto" class="form-label">Detalles adicionales</label>
-                                    <input type="text" class="form-control" id="descripcionProducto"
-                                           placeholder="Ingrese algún detalle adicional (opcional)">
+                                    <label for="marcaProducto" class="form-label">Marca del Producto</label>
+                                    <input type="text" class="form-control" id="marcaProducto" placeholder="Ingrese la marca del producto" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese la marca del producto.
+                                    </div>
                                 </div>
+
+                                <!-- Categoría -->
+                                <div class="mb-3">
+                                    <label for="categoriaProducto" class="form-label">Categoría del Producto</label>
+                                    <input type="text" class="form-control" id="categoriaProducto" placeholder="Ingrese la categoría del producto" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese la categoría del producto.
+                                    </div>
+                                </div>
+
+                                <!-- Descripción -->
+                                <div class="mb-3">
+                                    <label for="descripcionProducto" class="form-label">Descripción del Producto</label>
+                                    <input type="text" class="form-control" id="descripcionProducto" placeholder="Ingrese la descripción (opcional)">
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <!-- Button trigger modal -->
+                    <!-- Botón -->
                     <div class="d-grid gap-2 mt-3">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Enviar Datos
                         </button>
                     </div>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">¡Felicidades!</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Se han Enviado tus datos correctamente
-                                </div>
+                </form> <!-- cierre del form -->
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">¡Felicidades!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Se han enviado tus datos correctamente
                             </div>
                         </div>
                     </div>
+                </div>
 
-                </form>
-            </div>
+            </div> <!-- cierre accordion -->
 
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    
 
     <!-- Footer -->
     <footer class="text-white py-4 mt-auto" style="background-color: #280336;">
@@ -166,7 +207,7 @@
             <div class="row align-items-center">
                 <!-- Logo + texto -->
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <img src="Imagenes/Logo NeoMarket.png" alt="Logo" width="90" class="me-2">
+                    <img src="~/Imagenes/Logo NeoMarket.png" alt="Logo" width="90" class="me-2">
                     © Derechos reservados - 2025
                 </div>
                 <!-- Redes -->
@@ -176,10 +217,10 @@
                             <img src="~/Imagenes/Facebook_logo_(square).png" alt="Facebook" width="50">
                         </a>
                         <a href="https://www.instagram.com/_filosofarte?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="35">
+                            <img src="~/Imagenes/Instagram_icon.png" alt="Instagram" width="50">
                         </a>
                         <a href="#" target="_blank">
-                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="40">
+                            <img src="~/Imagenes/Gmail_icon_(2020).svg.png" alt="Gmail" width="60">
                         </a>
                     </div>
                 </div>
