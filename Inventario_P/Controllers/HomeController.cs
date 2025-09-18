@@ -15,15 +15,7 @@ namespace Inventario_P.Controllers
 
         public IActionResult Index()
         {
-            MovimientoDeProductoDB user = new MovimientoDeProductoDB();
-            var u = user.ObtenerMovimientos();
-            return View(u);
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
