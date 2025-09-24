@@ -43,6 +43,34 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
+
+    <!--Visualizacion de las Tablas-->
+    <div class="card">
+        <h5 class="card-header text-white" style="background-color: #141322;">Featured</h5>
+        <div class="card-body" style="background-color: #a9a105;">
+            <h5 class="card-title text-white"><strong>Stock y Tablas</strong></h5>
+            <p class="card-text text-white">Seleccione la Tabla que desea ver</p>
+            <select class="form-select" name="tablaSeleccionada" required>
+                <option selected>...</option>
+                <option value="1">Productos</option>
+                <option value="2">Bitacora</option>
+                <option value="3">Movimientos</option>
+            </select>
+
+            <br>
+
+            <!-- Button trigger modal -->
+            <div class="d-grid gap-2 mt-3">
+                <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#tablaModal">
+                    Mostrar tabla
+                </button>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- Footer -->

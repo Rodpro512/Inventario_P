@@ -19,7 +19,7 @@ public partial class Producto
 
     public string? Descripcion { get; set; }
 
-    public DateTime? Fecha { get; set; }
+    public DateOnly? Fecha { get; set; }
 
     public string? Foto { get; set; }
 
