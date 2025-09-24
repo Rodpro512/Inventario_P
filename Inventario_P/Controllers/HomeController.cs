@@ -1,26 +1,36 @@
-using System.Diagnostics;
-using Inventario_P.Models;
 using Microsoft.AspNetCore.Mvc;
+using Inventario_P.Models;
 
 namespace Inventario_P.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        private BitacoraBD bitacoraDb = new BitacoraBD();
-        private MovimientoDeProductoDB movimientoDeProductoDb = new MovimientoDeProductoDB();
-        private ProductoDB productoDb = new ProductoDB();
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        [HttpGet]
         public IActionResult Index()
         {
+            return View(new VistaConTablasViewModel());
+        }
 
-            return View();
+        [HttpPost]
+        public IActionResult Index(VistaConTablasViewModel model)
+        {
+            // Carga los datos según la tabla seleccionada
+            switch (model.tablaSeleccionada)
+            {
+                case "Producto":
+                    model.ProductoData = new ProductoDB().ObtenerProductos();
+                    break;
+
+                case "Bitacora":
+                    model.BitacoraData = new BitacoraBD().ObtenerBitacoras();
+                    break;
+
+                case "MovimientoDeProducto":
+                    model.MovimientoDeProductoData = new MovimientoDeProductoDB().ObtenerMovimientos();
+                    break;
+            }
+
+            return View(model);
         }
     }
 }

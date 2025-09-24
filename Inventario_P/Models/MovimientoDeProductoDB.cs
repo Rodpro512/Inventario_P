@@ -3,6 +3,7 @@ using Inventario_P.Models;
 using System;
 using System.Collections.Generic;
 using Inventario_P.Context;
+using System.Linq;
 
 namespace Inventario_P.Models
 {

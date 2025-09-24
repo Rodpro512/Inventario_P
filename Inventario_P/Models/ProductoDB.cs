@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Linq;
 
 namespace Inventario_P.Models
 {
@@ -9,7 +10,7 @@ namespace Inventario_P.Models
         Inventario_P.Context.Context con = new Inventario_P.Context.Context();
 
 
-        public List<Producto> ObtenerMovimientos()
+        public List<Producto> ObtenerProductos()
         {
             List<Producto> usersBaseDeDatos = new List<Producto>();
             string query = "SELECT * FROM Producto";

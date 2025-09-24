@@ -1,8 +1,10 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model VistaConTablasViewModel
+@using System.Linq
+
 @{
+    ViewData["Title"] = "Tu Vista";
 }
+
 <body style="background: url('https://media.gettyimages.com/id/1469875556/es/v%C3%ADdeo/fondo-de-l%C3%ADneas-abstractas-4k-loopable.jpg?s=640x640&k=20&c=VKM-5Fe6vYWW_fp_ZkqOwYLPnszs47JP6UJoMSSO2IQ=') no-repeat center center/cover">
     <!-- Header -->
     <header>
@@ -53,24 +55,94 @@
         <div class="card-body" style="background-color: #a9a105;">
             <h5 class="card-title text-white"><strong>Stock y Tablas</strong></h5>
             <p class="card-text text-white">Seleccione la Tabla que desea ver</p>
+          <form method="post">
             <select class="form-select" name="tablaSeleccionada" required>
                 <option selected>...</option>
-                <option value="1">Productos</option>
-                <option value="2">Bitacora</option>
-                <option value="3">Movimientos</option>
+                <option value="Producto">Productos</option>
+                <option value="Bitacora">Bitacora</option>
+                <option value="MovimientoDeProducto">Movimientos</option>
             </select>
-
             <br>
-
             <!-- Button trigger modal -->
             <div class="d-grid gap-2 mt-3">
-                <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#tablaModal">
+                <button type="submit" class="btn btn-dark" data-bs-target="#tablaModal">
                     Mostrar tabla
                 </button>
             </div>
-
+            </form>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tablaModal" tabindex="-1" aria-labelledby="tablaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background-color: #f5f5dc;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tablaModalLabel">Datos de @Model?.tablaSeleccionada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+
+                    @if (Model?.tablaSeleccionada == "Producto" && Model?.ProductoData != null && Model.ProductoData.Any())
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var p in Model.ProductoData ?? Enumerable.Empty<Inventario_P.Models.Producto>())
+                                {
+                                    <tr>
+                                        <td>@p.IdProducto</td>
+                                        <td>@p.Nombre</td>
+                                        <td>@p.Codigo</td>
+                                        <td>@p.IdMarca</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else if (Model?.tablaSeleccionada == "Bitacora" && Model?.BitacoraData != null && Model.BitacoraData.Any())
+                    {
+                        <table class="table">
+                            <thead><tr><th>ID</th><th>Acción</th><th>Fecha</th></tr></thead>
+                            <tbody>
+                                @foreach (var b in Model.BitacoraData ?? Enumerable.Empty<Inventario_P.Models.Bitacora>())
+                                {
+                                    <tr><td>@b.IdLogin</td>
+                                        <td>@b.Accion</td>
+                                        <td>@b.Fecha</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else if (Model?.tablaSeleccionada == "MovimientoDeProducto" && Model?.MovimientoDeProductoData != null && Model.MovimientoDeProductoData.Any())
+                    {
+                        <table class="table">
+                            <thead><tr><th>ID</th><th>Producto</th><th>Cantidad</th><th>Tipo</th><th>Fecha</th></tr></thead>
+                            <tbody>
+                                @foreach (var m in Model.MovimientoDeProductoData ?? Enumerable.Empty<Inventario_P.Models.MovimientoDeProducto>())
+                                {
+                                    <tr><td>@m.IdMoviento</td><td>@m.IdProducto</td><td>@m.Cantidad</td><td>@m.Tipo</td><td>@m.Fecha</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No hay datos para mostrar.</p>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Footer -->
@@ -101,3 +173,16 @@
     </footer>
 
     </body>
+
+<!-- Esto lo saque de la web, supuestamente, una solucion rapida-->
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var tabla = '@Model?.tablaSeleccionada';
+            if (tabla && tabla !== '...') {
+                var modal = new bootstrap.Modal(document.getElementById('tablaModal'));
+                modal.show();
+            }
+        });
+    </script>
+}
