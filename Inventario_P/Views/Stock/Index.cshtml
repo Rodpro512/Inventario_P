@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal de la seleccion de tablas-->
     <div class="modal fade" id="tablaModal" tabindex="-1" aria-labelledby="tablaModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content" style="background-color: #f5f5dc;">
@@ -174,13 +174,13 @@
 
     </body>
 
-<!-- Esto lo saque de la web, supuestamente, una solucion rapida-->
+<!-- Esto lo saque de la web, supuestamente, una solucion rapida a un problema que tenia-->
 @section Scripts {
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var tabla = '@Model?.tablaSeleccionada';
             if (tabla && tabla !== '...') {
-                var modal = new bootstrap.Modal(document.getElementById('tablaModal'));
+                var modal = new bootstrap.Modal(documen`t.getElementById('tablaModal'));
                 modal.show();
             }
         });
